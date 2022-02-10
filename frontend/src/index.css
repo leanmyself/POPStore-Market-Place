@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap');
+
+#root {
+  height: 100%;
+}
+
+html {
+  font-size: 60%;
+  box-sizing: border-box;
+  background-color:#FDF6F0;
+  cursor: default;
+}
+
+body{
+  margin: 0 auto;
+  height: 100vh;
+  font-size: 1.4rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  grid-area: main;
+  padding: 1rem;
+}
+
+
+/* COMMON STYLE */
+a {
+  text-decoration: none;
+  color: #483434;
+}
+
+a:hover{
+  color: #6F4C5B;
+}
+
+a.brand{
+  color: whitesmoke;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+li{
+  margin-top: 1rem;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 1rem;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row.center {
+  justify-content: center;
+}
+
+.row.top{
+  align-items: flex-start;
+}
+
+.col-1{
+  flex: 2 1 50rem;
+}
+
+.col-2{
+  margin-inline: 2rem;
+  flex: 1 1 40rem;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto 
+}
+
+footer{
+  grid-area: footer;
+  background-color: #6F4C5B;
+  color: #fff;
+}
+/* END COMMON TOOLS */
+
+
+/* HEADER AND NAV */
+.grid-container{
+  display: grid;
+  grid-template-areas: 
+  'header'
+  'main'
+  'footer';
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+}
+
+header{
+  grid-area: header;
+  background-color: #9E7777;
+}
+
+header a{
+  color: whitesmoke;
+  padding: 1rem;
+}
+
+.nav{
+  font-weight: 500;
+  font-size: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav a:hover {
+  color: #DEBA9D;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  display: none;
+  right: 0;
+  min-width: 12rem;
+  padding: 1rem;
+  z-index: 1;
+  background-color: #203040;
+  margin: 0;
+  margin-top: 0.4rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* END HEADER AND NAV */
+
+
+
+/* SIGN IN */
+.form {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+input{
+  font-size: 12px;
+  line-height: 1px;
+  color: #686868;
+  border: none;
+  border-radius: 5px;
+  background: #e6e6e6;
+  height: 10px;
+  padding: 0 30px 0 50px;
+}
+
+input[type="email"], input[type="password"]{
+  font-size: 12px;
+  font-weight:300;
+}
+
+input::placeholder {
+  font-size: 12px;
+  font-weight:200;
+}
+
+input:focus, .input:active:focus, .input.active:focus{
+  outline:none;
+  box-shadow:none;
+}
+
+.button-login{
+  background-color: #DEBA9D;
+  color: #f5f7e2;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  width: 50%;
+  margin: 0 auto;
+  
+}
+
+.form > div {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.form label {
+  margin: 1rem 0;
+  display: block;
+}
+
+@media (min-width:550px){
+.card.card-signin{
+  width: 50%;
+  margin: 0 auto;
+}
+}
+/* END SIGN IN */
+
+
+/* HOME SCREEN & PRODUCT DISPLAY */
+.card{
+  border: 0.1rem solid #EED6C4;
+  background-color: #F5E8C7;
+  border-radius: .5rem;
+  margin: 2rem 1rem 1rem 1rem;
+  font-size: 1.2rem;
+  
+}
+.card-body{
+  padding: 1rem;
+}
+
+.card-body > * {
+  margin-bottom: 0.5rem;
+}
+
+img.medium {
+  max-width: 25rem;
+  width: 100%;
+}
+
+img.large {
+  width: 60%;
+  max-width: 500px;
+  height: auto;
+}
+
+.price{
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: right;
+  color: #694E4E;
+}
+
+.rating span {
+  color: #f0c040;
+  margin: 0.1rem;
+}
+
+.rating span:last-child {
+  color: #404040;
+}
+
+input, select, textarea, button {
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+
+input:hover, select:hover, textarea:hover, button:hover {
+  border: 1px solid #FDF6F0;
+}
+
+button.primary{
+  background-color: #FBD148;
+  color: #fff;
+}
+
+button.block{
+  width: 100%;
+}
+
+.qty-select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding:7px;
+  font-size: 1.2rem;
+  outline: none;
+  background-color: #FFF3E4;
+  height: 30px;
+  text-align: center;
+}
+
+.badge {
+  background-color: #DA1212;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 0.2rem 0.7rem;
+  font-size: 1.4rem;
+  margin-left: 0.2rem;
+}
+
+.section-heading{
+  font-weight: 600;
+  font-size: 14px;
+  color: #6B4F4F;
+}
+
+.section-subheading{
+  font-weight: 660;
+  color: #9E7777;
+}
+/* END HOME SCREEN DISPLAY */
+
+
+/*ALERT */
+.success{
+  background-color: #116530;
+  color: #fff;
+  padding: 2px 5px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.error {
+  background-color: #AA2B1D;
+  color: #fff;
+  padding: 2px 5px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.alert {
+  padding: 1rem;
+  border: 0.1rem solid transparent;
+  border: 0.5rem;
+}
+.alert-info{
+  color: #2020a0;
+  background-color: #e0e0ff;
+}
+
+.alert-danger{
+  color: #a02020;
+  background-color: #FFCB8E;
+}
+/*END ALERT */
+
+
+
+/*INSIDE CART NAV */
+.checkout{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  line-height: 30px;
+}
+
+.checkout-num{
+  font-size: 1.2rem;
+  color: #404040;
+  margin-top: -2.5rem;
+}
+
+img.small {
+  max-width: 15rem;
+  width: 100%;
+}
+
+.cart-title h1, .cart-title h2{
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #734046;
+}
+
+.cart-alert{
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.cart-alert-link:hover{
+  padding: .5rem;
+  background-color: #FFF3E4;
+}
+
+.cart-item{
+  line-height: 20px;
+}
+
+.cart-button{
+  background-color: #DD4A48;
+  color: #fff;
+  font-size: 12px;
+}
+
+/*END CART NAV */
